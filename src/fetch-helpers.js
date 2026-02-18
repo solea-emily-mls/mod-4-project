@@ -20,3 +20,4 @@ export const getData = async () => {
         console.warn('Error fetching artworks: ', error);
     }
 } 
+
