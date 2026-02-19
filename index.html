@@ -12,6 +12,33 @@
     <main>
     <section>
       <h2>Item</h2>
+    <form>
+      <h2>Search For Paintings By Keyword</h2>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="keyword">Keyword</label>
+          <input type="text" id="keyword" name="keyword"/>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Select the number of results you'd like</legend>
+          <div>
+            <input type="radio" id="results-25" name="results" value="25" />
+            <label for="results-25">25</label>
+          </div>
+          <div>
+            <input type="radio" id="results-50" name="results" value="50" />
+            <label for="results-50">50</label>
+          </div>
+          <div>
+            <input type="radio" id="results-100" name="results" value="100" />
+            <label for="results-100">100</label>
+          </div>
+      </fieldset>
+      
+      <button type="submit">Search for paintings!</button>
+    </form>
       
     </section>
     <section id="fetch-collection">
