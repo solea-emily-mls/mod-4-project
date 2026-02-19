@@ -44,3 +44,4 @@ export const getArtById = async (id) => {
         console.warn('Error fetching artwork: ', error);
     }
 };
+
