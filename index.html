@@ -10,21 +10,21 @@
       <h1>Gallery</h1>
     </header>
     <main>
-    <section id="single-work">
-      <h2>Item</h2>
-      <div id="card"></div>
-    </section>
-    <form>
-      <h2>Search For Paintings By Keyword</h2>
-      <div class="form-row">
-        <div class="form-field">
-          <label for="keyword">Keyword</label>
-          <input type="text" id="keyword" name="keyword"/>
+      <section id="single-work">
+        <h2>Item</h2>
+        <div id="card"></div>
+      </section>
+      <form>
+        <h2>Search For Paintings By Keyword</h2>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="keyword">Keyword</label>
+            <input type="text" id="keyword" name="keyword" />
+          </div>
         </div>
-      </div>
 
-      <fieldset>
-        <legend>Select the number of results you'd like</legend>
+        <fieldset>
+          <legend>Select the number of results you'd like</legend>
           <div>
             <input type="radio" id="results-25" name="results" value="25" />
             <label for="results-25">25</label>
@@ -37,15 +37,15 @@
             <input type="radio" id="results-100" name="results" value="100" />
             <label for="results-100">100</label>
           </div>
-      </fieldset>
-      
-      <button type="submit">Search for paintings!</button>
-    </form>
-    <section id="fetch-collection">
-    <h2>Collection</h2>
-    <p id="error"></p>
-    <ul id="collection-list"></ul>
-    </section>
+        </fieldset>
+
+        <button type="submit">Search for paintings!</button>
+      </form>
+      <section id="fetch-collection">
+        <h2>Collection</h2>
+        <p id="error"></p>
+        <ul id="collection-list"></ul>
+      </section>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>
