@@ -36,4 +36,4 @@ form.addEventListener('submit', (event) => {
 });
 
 getArt(129884);
-getArtworks();
+getArtworks("", 12);
