@@ -35,3 +35,5 @@ form.addEventListener('submit', (event) => {
   form.reset();
   getArtworks(keyword, results);
 });
+
+getArtworks("", 12);
