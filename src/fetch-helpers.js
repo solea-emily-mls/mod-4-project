@@ -1,13 +1,16 @@
-export const getData = async () => {
+export const getData = async (keyword, results) => {
   try {
-    const response = await fetch("https://api.artic.edu/api/v1/artworks");
+    const response = await fetch(
+      `https://api.artic.edu/api/v1/artworks/search?q=${keyword}&limit=${results}&fields=id,title,image_id,artwork_type_title`
+    );
+
     if (!response.ok) {
       throw Error(`Fetch failed. ${response.status} ${response.statusText}`);
     }
-    const { data: artworksArray } = await response.json();
-    console.log(artworksArray);
 
-    const artworks = artworksArray
+    const { data } = await response.json();
+
+    const artworks = data
       .filter((artwork) => artwork.image_id)
       .map((artwork) => ({
         id: artwork.id,
@@ -17,6 +20,7 @@ export const getData = async () => {
       }));
 
     return artworks;
+
   } catch (error) {
     console.warn("Error fetching artworks: ", error);
   }
