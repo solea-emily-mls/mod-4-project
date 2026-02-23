@@ -30,6 +30,8 @@ export const renderArtwork = (work) => {
   img.src = `https://www.artic.edu/iiif/2/${work.image_id}/full/1686,/0/default.jpg`;
   img.alt = work.title;
 
+  const cardInfo = document.createElement("div");
+
   const title = document.createElement("h3");
   title.textContent = work.title;
 
@@ -37,8 +39,9 @@ export const renderArtwork = (work) => {
   info.textContent = `${work.place_of_origin || "Unknown origin"},  ${work.date_display || "Date unknown"}`;
   const description = document.createElement("p");
   description.textContent = `${work.short_description || "No description available"}`;
-
-  card.append(img, title, info, description);
+  
+  cardInfo.append(title, info, description);
+  card.append(img, cardInfo)
   artwork.append(card);
 };
 

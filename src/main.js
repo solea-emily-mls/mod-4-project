@@ -5,10 +5,9 @@ const getArtworks = async (keyword, results) => {
   const artworks = await getData(keyword, results);
   console.log(artworks);
   if (artworks.error) {
-    renderError(artworks.error.message);
+    renderError('not here');
     renderCollection();
   } else {
-    renderError("NOT HERE");
     renderCollection(artworks);
   }
 };
@@ -36,4 +35,5 @@ form.addEventListener('submit', (event) => {
   getArtworks(keyword, results);
 });
 
+getArt(129884);
 getArtworks("", 12);
