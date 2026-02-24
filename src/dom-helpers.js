@@ -24,7 +24,7 @@ export const renderCollection = (artworks) => {
 };
 
 export const renderArtwork = (work) => {
-  artwork.innerHTML = "";
+  card.innerHTML = "";
 
   const img = document.createElement("img");
   img.src = `https://www.artic.edu/iiif/2/${work.image_id}/full/1686,/0/default.jpg`;
