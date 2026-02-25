@@ -12,10 +12,6 @@ npm run dev
 
 An art viewer application using the Art Institute of Chicago API that allows you to view artworks from the Art Institute of Chicago in a gallery view and learn more about each work.
 
-  
-
-**Link:**
----------
 
   
 
