@@ -3,10 +3,10 @@ Artly
 
 **Setup:**
 ----------  
-
-npm i 
+```
+npm i
 npm run dev
-
+```
 **Artly:**
 ----------
 
@@ -49,9 +49,13 @@ Search for an artwork using a keyword.
 
 <img width="1870" height="999" alt="Search" src="https://github.com/user-attachments/assets/419ca737-b8b9-4865-84c7-c4873983cbc0" />
 
+
+
 Browse the collection.
 
 <img width="1865" height="1005" alt="Collection" src="https://github.com/user-attachments/assets/14192637-85cc-444d-811c-0e7ccf4e29a4" />
+
+
 
 Click on the artwork to view more about the piece.
 
