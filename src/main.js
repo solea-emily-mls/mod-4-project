@@ -35,5 +35,18 @@ form.addEventListener('submit', (event) => {
   getArtworks(keyword, results);
 });
 
-getArt(129884);
+const cardPopup = document.querySelector('#collection-list');
+cardPopup.addEventListener('click', (event) => {
+  const li = event.target.closest('li');
+  if(!li) return;
+  
+  getArt(li.dataset.workId);
+
+  const singleWorkSection = document.querySelector('#single-work');
+  singleWorkSection.scrollIntoView({ 
+    behavior: 'smooth', 
+    block: 'start',
+  });
+});
+
 getArtworks("", 12);

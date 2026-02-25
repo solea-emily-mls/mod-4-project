@@ -6,38 +6,64 @@
 }
 
 :root {
+--text: #0b0a08;
+--background: #f7f3f2;
+--primary: #b18c5b;
+--secondary: #ddc3a1;
+--accent: #E59D58;
+}
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
+  background-color: var(--background);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-height: 100vh;;
 }
 
 main {
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
+}
+
+#top-bg-color{
+  background-color: #E59D58;
+  border-radius: 8px;
 }
 
 header {
   display: flex;
+  top: 0;
+  padding: 30px ;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  left: 0;
+  top: 0;
+}
+
+h1 {
+  padding-left: 3.6rem;
+  
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px; 
+  margin: 0 auto;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border: 2px solid blue;
-  box-shadow: 4px 6px 1px 4px blue;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  padding: 0 2rem;
 }
 
 nav {
@@ -53,6 +79,19 @@ section {
   gap: 0.5rem;
 }
 
+
+#single-work {
+  scroll-padding-top: 2rem;
+}
+
+#collection {
+  background-color: var(--background);
+}
+
+#collection h2 {
+  padding: 10px 10px 10px 0;
+}
+
 #collection-list {
   list-style: none;
   display: grid;
@@ -61,18 +100,24 @@ section {
 }
 
 #collection-list li {
-  background-color: blue;
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary);
   border-radius: 8px;
   padding: 0.75rem;
   cursor: pointer;
 }
 
 #collection-list li:hover {
-  background-color: #f5f5f5;
+  background-color: var(--background);
+  border: 2px solid var(--accent);
+  padding: 15px;
+  box-shadow: 4px 6px 1px 4px var(--accent);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 #collection-list img {
@@ -91,13 +136,13 @@ ul {
 }
 
 #card {
-  border: 1px solid #ddd;
+  background-color: var(--background);
+  border: 1px solid var(--background);
   border-radius: 8px;
   padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 #card img {
@@ -106,40 +151,116 @@ ul {
   border-radius: 4px;
   padding: 1rem;
   display: flex;
-
 }
 
-#card h3, #card h4, #card p{
+#card h3,
+#card h4,
+#card p {
   margin-left: 1.5rem;
   padding: 0.2rem;
 }
 
-.project-card:hover {
-  background-color: var(--secondary);
-  border: 2px solid var(--text);
-  padding: 15px;
-  box-shadow: 4px 6px 1px 4px var(--text);
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s,
-    background-color 0.2s;
-}
-
-#error-message {
+#error {
   color: red;
   min-height: 1.25rem;
 }
 
 form {
+  background-color: var(--secondary);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: start;
-  border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 0.75rem;
+  padding: 3rem;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  border-style: none;
+  padding: 5px 5px 5px 0;
+}
+
+button {
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  padding: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-radius: 8px;
+}
+
+button:hover {
+  border: 1px solid var(--accent);
+  box-shadow: 4px 4px 1px 2px var(--accent);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hidden {
   display: none !important;
+}
+
+@media screen and (max-width: 399px) {
+  #collection-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  #collection-list li {
+    padding: 0.5rem;
+  }
+
+  #collection-list h3 {
+    font-size: 0.8rem;
+  }
+
+  fieldset div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+
+@media screen and (min-width: 900px) {
+  body {
+    padding: 2rem;
+  }
+
+  #collection-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+@media screen and (min-width: 1200px) {
+  #collection-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+  }
+
+  #collection-list li {
+    padding: 1rem;
+  }
+
+  #collection-list h3 {
+    font-size: 1rem;
+  }
+
+  #card {
+    padding: 2rem;
+  }
+
+  #card img {
+    max-width: 400px;
+  }
+}
+
 }
